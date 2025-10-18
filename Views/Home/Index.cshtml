@@ -2,7 +2,19 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to UniThrift</h1>
+        <p>Buy, sell, and trade within in your college community</p>
+        <div class="hero-buttons">
+            <a asp-controller="Listings" asp-action="Index" class="hero-btn">Browse</a>
+            <a asp-controller="Listings" asp-action="Create" class="hero-btn">Sell</a>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+</section>
+
+<section class="about">
+</section>
