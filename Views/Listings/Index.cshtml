@@ -1,6 +1,22 @@
+@model List<secondhand_marketplace.Models.Listings>
+
 @{
     ViewData["Title"] = "Browse Listings";
 }
 
 <h1>Shop</h1>
+<h2>Latest Items</h2>
+
+<div class="listing-grid">
+@foreach (var item in Model)
+{
+    <div class="listing-card">
+        <img src="@item.ImageURL" alt="@item.Title"/>
+        <h3>@item.Title</h3>
+        <p>@item.Category</p>
+        <p><strong>$@item.Price</strong></p>
+        <p>@item.Description</p>
+    </div>
+}
+</div>
 
