@@ -1,4 +1,4 @@
-@model List<secondhand_marketplace.Models.Listings>
+@model List<UniThrift.Models.Listing>
 
 @{
     ViewData["Title"] = "Browse Listings";
@@ -11,7 +11,6 @@
 @foreach (var item in Model)
 {
     <div class="listing-card">
-        <img src="@item.ImageURL" alt="@item.Title"/>
         <h3>@item.Title</h3>
         <p>@item.Category</p>
         <p><strong>$@item.Price</strong></p>

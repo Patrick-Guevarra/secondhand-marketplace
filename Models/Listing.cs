@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace UniThrift.Models
 {
-    public class Listings
+    public class Listing
     {
         [Key]
         public int Id { get; set; }
@@ -18,6 +18,7 @@ namespace UniThrift.Models
         //[ForeignKey]
         [Required(ErrorMessage = "Enter a category.")]
         public string CategoryId { get; set; } = "GEN";
+        public Category? Category { get; set; }
         [StringLength(500)]
         public string Description { get; set; } = string.Empty;
 
