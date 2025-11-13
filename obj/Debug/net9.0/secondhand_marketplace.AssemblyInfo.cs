@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("secondhand_marketplace")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7869aef6977fe30b3055b1691f2d8d4eaae51262")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e0ac7094ebdbc84de9d77b5e66e573ad7f768b9")]
 [assembly: System.Reflection.AssemblyProductAttribute("secondhand_marketplace")]
 [assembly: System.Reflection.AssemblyTitleAttribute("secondhand_marketplace")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
