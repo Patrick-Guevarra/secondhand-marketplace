@@ -1,12 +1,32 @@
-namespace secondhand_marketplace.Models
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace UniThrift.Models
 {
     public class Listings
     {
-        public string Title { get; set; } = "";
+        [Key]
+        public int Id { get; set; }
+
+        [Required(ErrorMessage = "Enter a title."), StringLength(80)]
+        public string Title { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Enter a price."), Range(0, 10000)]
         public decimal Price { get; set; }
-        public string Category { get; set; } = "";
-        public string Description { get; set; } = "";
-        public string ImageURL { get; set; } = "";
+
+        //[ForeignKey]
+        [Required(ErrorMessage = "Enter a category.")]
+        public string CategoryId { get; set; } = "GEN";
+        [StringLength(500)]
+        public string Description { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Enter a campus."), StringLength(100)]
+        public string Campus { get; set; } = string.Empty;
+
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public bool IsActive { get; set; } = true;
+
     }
 }
 
