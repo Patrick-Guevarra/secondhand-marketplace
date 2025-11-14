@@ -1,6 +1,72 @@
+@model UniThrift.Models.Listing
+
 @{
     ViewData["Title"] = "Create Listings";
+    var categories = ViewBag.Categories as List<UniThrift.Models.Category>;
 }
 
 <h1>Sell</h1>
+
+<form asp-action="Create" method="post" enctype="multipart/form-data"> <!-- enctype="multipart/form-data" required for file uploads-->
+<div asp-validation-summary="ModelOnly" class="text-danger"></div> <!-- ModelOnly ignores field specific errors -->
+
+<!-- Title -->
+<div>
+    <label asp-for="Title" class="form-label"></label>
+    <input asp-for="Title" class="form-control"/>
+    <span asp-validation-for="Title" class="text-danger"></span> <!-- field error -->
+</div>
+
+<!-- Description -->
+    <div>
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <!-- Price -->
+    <div>
+        <label asp-for="Price" class="form-label"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <!-- Category dropdown -->
+    <div>
+        <label asp-for="CategoryId" class="form-label">Category</label>
+        <select asp-for="CategoryId" class="form-select">
+            @if (categories != null)
+            {
+                @foreach (var c in categories)
+                {
+                    <option value="@c.CategoryId">@c.Name</option>
+                }
+            }
+        </select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+
+    <!-- Campus -->
+    <div>
+        <label asp-for="Campus" class="form-label"></label>
+        <input asp-for="Campus" class="form-control" />
+        <span asp-validation-for="Campus" class="text-danger"></span>
+    </div>
+
+    <!-- Image upload -->
+    <div>
+        <label asp-for="ImageFile" class="form-label">Listing Photo</label>
+        <input asp-for="ImageFile" type="file" class="form-control" />
+        <span asp-validation-for="ImageFile" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+<!-- Loads instant real time validation for form fields on browser-->
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
 

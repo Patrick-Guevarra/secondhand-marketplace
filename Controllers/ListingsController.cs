@@ -68,7 +68,7 @@ namespace UniThrift.Controllers
 
             context.Listings.Add(listing);
             context.SaveChanges();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Listings");
         }
     }
 }
