@@ -23,10 +23,12 @@ namespace UniThrift.Data
             modelBuilder.Entity<Listing>().HasData(
                 new Listing
                 {
-                    Id = 1, Title = "Discrete Math Textbook",
-                    Description = "Good condition, highlights in first 2 chapters",
-                    Price = 25, CategoryId = "BOOK",
-                    Campus = "Fairleigh Dickinson University", IsActive = true,
+                    Id = 1, Title = "Desk Lamp",
+                    Description = "Perfect condition, works just as new",
+                    Price = 25, CategoryId = "GEN",
+                    Campus = "Fairleigh Dickinson University",
+                    ImagePath = "/images/listings/lamp.jpg",
+                    IsActive = true,
                     CreatedAt = new DateTime(2025, 11, 12, 0, 0, 0, DateTimeKind.Utc)
                 }
             );

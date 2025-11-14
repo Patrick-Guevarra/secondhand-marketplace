@@ -15,7 +15,7 @@
     @foreach (var item in Model) 
     {
         <div class="listing-card">
-            <img src="https://via.placeholder.com/300x180?text=No+Image" alt="Listing Image" /> <!--Add image url -->
+            <img src="@item.ImagePath" alt="Listing Image" /> 
             <h4>@item.Title</h4>
             <p class="text-muted">@item.Category?.Name</p>
             <p><strong>$@item.Price</strong></p>
