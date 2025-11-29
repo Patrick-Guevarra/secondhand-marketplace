@@ -40,12 +40,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGlzdGluZ3MvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/patrickguevarra/Projects/Internet Programming/secondhand_marketplace/Views/Listings/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGlzdGluZ3MvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/patrickguevarra/Projects/Internet Programming/secondhand_marketplace/Views/Listings/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGlzdGluZ3MvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/patrickguevarra/Projects/Internet Programming/secondhand_marketplace/Views/Listings/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGlzdGluZ3MvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/patrickguevarra/Projects/Internet Programming/secondhand_marketplace/Views/Listings/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGlzdGluZ3MvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/patrickguevarra/Projects/Internet Programming/secondhand_marketplace/Views/Listings/MyListings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGlzdGluZ3MvTXlMaXN0aW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/patrickguevarra/Projects/Internet Programming/secondhand_marketplace/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/patrickguevarra/Projects/Internet Programming/secondhand_marketplace/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/patrickguevarra/Projects/Internet Programming/secondhand_marketplace/Views/Shared/_ValidationScriptsPartial.cshtml]

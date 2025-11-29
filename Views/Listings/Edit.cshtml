@@ -1,0 +1,82 @@
+@model UniThrift.Models.Listing
+
+@{
+    ViewData["Title"] = "Edit Listing";
+    var categories = ViewBag.Categories as List<UniThrift.Models.Category>;
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <!-- Title -->
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <!-- Description -->
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <!-- Price -->
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <!-- Category -->
+    <div class="mb-3">
+        <label asp-for="CategoryId" class="form-label">Category</label>
+        <select asp-for="CategoryId" class="form-select">
+            @foreach (var c in categories!)
+            {
+                <option value="@c.CategoryId">@c.Name</option>
+            }
+        </select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+
+    <!-- Campus -->
+    <div class="mb-3">
+        <label asp-for="Campus" class="form-label"></label>
+        <input asp-for="Campus" class="form-control" />
+        <span asp-validation-for="Campus" class="text-danger"></span>
+    </div>
+
+    <!-- Current Image -->
+    @if (!string.IsNullOrEmpty(Model.ImagePath))
+    {
+        <div class="mb-3">
+            <label class="form-label">Current Photo</label><br />
+            <img src="@Model.ImagePath" alt="@Model.Title" style="max-width: 200px; border-radius: 8px;" />
+        </div>
+    }
+
+    <!-- New Image (optional/required depending on your model) -->
+    <div class="mb-3">
+        <label asp-for="ImageFile" class="form-label">Replace Photo</label>
+        <input asp-for="ImageFile" type="file" class="form-control" />
+        <span asp-validation-for="ImageFile" class="text-danger"></span>
+    </div>
+
+    <!-- IsActive -->
+    <div class="mb-3 form-check">
+        <input asp-for="IsActive" class="form-check-input" />
+        <label asp-for="IsActive" class="form-check-label">Active</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a asp-action="MyListings" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
