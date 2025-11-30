@@ -4,11 +4,13 @@
     ViewData["Title"] = "My Listings";
 }
 
-<h2>@ViewData["Title"]</h2>
-
-<p>
-    <a asp-action="Create" class="btn btn-primary">Create New Listing</a>
-</p>
+<div class="page-heading">
+    <div>
+        <h2>@ViewData["Title"]</h2>
+        <p class="text-muted">Manage and update your active listings.</p>
+    </div>
+    <a asp-action="Create" class="btn btn-primary create-btn">Create New Listing</a>
+</div>
 
 <div class="listing-grid">
     @foreach (var item in Model)

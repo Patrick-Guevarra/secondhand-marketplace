@@ -3,18 +3,65 @@
 }
 
 <section class="hero">
-    <div class="hero-content">
-        <h1>Welcome to UniThrift</h1>
-        <p>Buy, sell, and trade within in your college community</p>
-        <div class="hero-buttons">
-            <a asp-controller="Listings" asp-action="Index" class="hero-btn">Browse</a>
-            <a asp-controller="Listings" asp-action="Create" class="hero-btn">Sell</a>
+    <div class="container hero-inner">
+        <div class="hero-content">
+            <h1>Welcome to UniThrift</h1>
+            <p>Buy, sell, and trade within your college community fast, safe, and sustainable.</p>
+            <div class="hero-buttons">
+                <a asp-controller="Listings" asp-action="Index" class="hero-btn primary">Browse</a>
+                <a asp-controller="Listings" asp-action="Create" class="hero-btn ghost">Sell</a>
+            </div>
         </div>
     </div>
 </section>
 
 <section class="features">
+    <div class="container">
+        <h2>Why UniThrift Works</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>Browse & Search</h3>
+                <p>Find deals fast with search, filters for category, price, and sort options.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Pickup or Delivery</h3>
+                <p>Flexible meetups, easy to deliver locally.</p>
+            </div>
+            <div class="feature-card">
+                <h3>List in Minutes</h3>
+                <p>Snap photos, describe your item, and publish instantly.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Sustainability</h3>
+                <p>Give items a second life, see how many items were reused.</p>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section class="about">
+    <div class="container about-grid">
+        <div class="about-copy">
+            <h2>Built by students, for students</h2>
+            <p>UniThrift connects your campus so you can keep great gear in circulation, save money, and shop safely.</p>
+            <ul class="about-points">
+                <li>Campus-only marketplace to keep transactions local and trusted.</li>
+                <li>Lower waste with reuse and resale instead of buying new.</li>
+            </ul>
+        </div>
+        <div class="about-stats">
+            <div class="stat-card">
+                <div class="stat-number">2K+</div>
+                <div class="stat-label">Listings relisted</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">92%</div>
+                <div class="stat-label">Buyers rate transactions 5 stars</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">18</div>
+                <div class="stat-label">Campus communities active</div>
+            </div>
+        </div>
+    </div>
 </section>

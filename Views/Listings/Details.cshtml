@@ -7,18 +7,18 @@
     var isOwner = Model.UserId == currentUserId;
 }
 
-<div class="container mt-4">
-    <div class="row">
+<div class="container mt-4 listing-details">
+    <div class="row g-4 align-items-start details-row justify-content-center">
         <!-- Image -->
         <div class="col-md-5">
             <img src="@Model.ImagePath"
                  alt="@Model.Title"
-                 class="img-fluid rounded"
+                 class="img-fluid detail-image"
                  style="max-height: 400px; object-fit: cover; width: 100%; object-fit: contain;" />
         </div>
 
         <!-- Info -->
-        <div class="col-md-7">
+        <div class="col-md-7 detail-card">
             <h2>@Model.Title</h2>
             <h5 class="text-muted">@Model.Category?.Name</h5>
 

@@ -16,10 +16,11 @@
     <!-- Your custom styles (listing cards, etc.) -->
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/listings.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
 </head>
-<body class="bg-light">
+<body class="app-body">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-dark app-nav">
             <div class="container">
                 <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="Index">
                     UniThrift
@@ -46,13 +47,13 @@
         </nav>
     </header>
 
-    <main class="container py-4">
-        <div class="bg-white p-4 rounded-3 shadow-sm">
+    <main class="app-main">
+        <div class="content-shell">
             @RenderBody()
         </div>
     </main>
 
-    <footer class="border-top py-3 mt-4 bg-white">
+    <footer class="app-footer">
         <div class="container text-center text-muted">
             &copy; @DateTime.Now.Year - UniThrift
         </div>
