@@ -22,13 +22,46 @@ namespace UniThrift.Controllers
 
         // /Listings index view
         [AllowAnonymous] //Does not require auth
-        public IActionResult Index()
+        public IActionResult Index(string? query, string? categoryId, string? campus)
         {
-            //Orders by last created
-            var listings = context.Listings
-                .Include(l=>l.Category)
-                .OrderByDescending(
-                l=>l.CreatedAt).ToList();
+            // Build a queryable feed to layer on filters before pulling data back
+            var listingsQuery = context.Listings
+                .Include(l => l.Category)
+                .Where(l => l.IsActive)
+                .AsQueryable();
+
+            // Text search across title and description (case-insensitive match on the database side)
+            if (!string.IsNullOrWhiteSpace(query))
+            {
+                var term = query.Trim();
+                listingsQuery = listingsQuery.Where(l =>
+                    EF.Functions.Like(l.Title, $"%{term}%") ||
+                    EF.Functions.Like(l.Description, $"%{term}%"));
+            }
+
+            // category filter
+            if (!string.IsNullOrWhiteSpace(categoryId))
+            {
+                listingsQuery = listingsQuery.Where(l => l.CategoryId == categoryId);
+            }
+
+            // Optional campus filter 
+            if (!string.IsNullOrWhiteSpace(campus))
+            {
+                listingsQuery = listingsQuery.Where(l => l.Campus == campus);
+            }
+
+            // Order newest first and execute the query
+            var listings = listingsQuery
+                .OrderByDescending(l => l.CreatedAt)
+                .ToList();
+
+            // Send the filters and selections back to the view
+            ViewBag.Categories = context.Categories.OrderBy(c => c.Name).ToList();
+            ViewBag.Query = query;
+            ViewBag.CategoryId = categoryId;
+            ViewBag.Campus = campus;
+
             return View(listings);
         }
         
@@ -78,6 +111,7 @@ namespace UniThrift.Controllers
             await context.SaveChangesAsync();
             return RedirectToAction("Index", "Listings");
         }
+
         [Authorize]
         public IActionResult MyListings()
         {
@@ -188,7 +222,7 @@ namespace UniThrift.Controllers
 
             if (listing == null)
             {
-                return NotFound(); // or Forbid()
+                return NotFound(); 
             }
 
             return View(listing);
@@ -204,7 +238,7 @@ namespace UniThrift.Controllers
 
             if (listing == null)
             {
-                return NotFound(); // or Forbid()
+                return NotFound(); 
             }
 
             // delete image file
@@ -228,7 +262,7 @@ namespace UniThrift.Controllers
         {
             var listing = await context.Listings
                 .Include(l => l.Category)
-                .Include(l => l.User) // requires nav property if you kept it
+                .Include(l => l.User) 
                 .FirstOrDefaultAsync(l => l.Id == id);
 
             if (listing == null)
@@ -241,4 +275,3 @@ namespace UniThrift.Controllers
 
     }
 }
-

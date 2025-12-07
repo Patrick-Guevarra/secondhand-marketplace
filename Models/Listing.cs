@@ -30,6 +30,7 @@ namespace UniThrift.Models
 
         // Image Handling
         public string ImagePath { get; set; } = string.Empty;
+        
         [Required(ErrorMessage = "Upload a photo."), NotMapped] // Doesnt map ImageFile to a column, only makes a column for the ImagePath
         public IFormFile? ImageFile { get; set; } //IFormFile? because its only used during POST, so its null when loading the listing from db
 

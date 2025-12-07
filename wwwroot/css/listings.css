@@ -22,6 +22,33 @@
     color: var(--muted) !important;
 }
 
+/* Inline search + filters above the grid */
+.listing-search {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 0 16px;
+}
+
+.listing-search input,
+.listing-search select {
+    background: rgba(255, 255, 255, 0.04);
+    border: var(--border);
+    color: var(--text);
+    border-radius: 10px;
+    padding: 10px 12px;
+    min-width: 180px;
+}
+
+.listing-search input::placeholder {
+    color: var(--muted);
+}
+
+.listing-search .btn {
+    border-radius: 999px;
+}
+
 .create-btn {
     border-radius: 999px;
     padding: 10px 16px;
